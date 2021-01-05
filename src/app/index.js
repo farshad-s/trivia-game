@@ -1,5 +1,9 @@
+import { accessApi } from "./accessApi";
+
 import "@styles/main.scss";
 
-const App = () => {};
+const App = () => {
+  accessApi();
+};
 
 App();
