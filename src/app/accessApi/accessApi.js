@@ -1,3 +1,5 @@
+import { enableAnswers, disableAnswers } from "../toggleAnswer/toggleAnswer.js"
+
 let endpoint =
   "https://opentdb.com/api.php?amount=30&category=9&difficulty=easy&type=multiple";
 
@@ -21,11 +23,7 @@ export const accessApi = () => {
         answerTwo.innerText = data.results[num].incorrect_answers[1]
         answerThree.innerText = data.results[num].correct_answer
         answerFour.innerText = data.results[num].incorrect_answers[2]
-        
-        answers[0].disabled = false;
-        answers[1].disabled = false;
-        answers[2].disabled = false;
-        answers[3].disabled = false;
+        disableAnswers();
       }) 
       for (let i = 0; i < answers.length; i++) {
         answers[i].addEventListener("click", function(){
@@ -36,10 +34,7 @@ export const accessApi = () => {
         } else {
           num++;
           answers[i].style.backgroundColor = "red";
-        } answers[0].disabled = true;
-          answers[1].disabled = true;
-          answers[2].disabled = true;
-          answers[3].disabled = true;
+        } enableAnswers();
         })
       }
       })
