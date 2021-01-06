@@ -8,6 +8,8 @@ let answerTwo = document.getElementById("answer-2")
 let answerThree = document.getElementById("answer-3")
 let answerFour = document.getElementById("answer-4")
 
+var answers = document.getElementsByName("answer");
+
 export const accessApi = () => {
   fetch(endpoint)
     .then((response) => response.json())
@@ -20,6 +22,9 @@ export const accessApi = () => {
         answerThree.innerText = data.results[num].correct_answer
         answerFour.innerText = data.results[num].incorrect_answers[2]
         num++;
+        for (let i = 0; i < answers.length; i++) {
+          answers[i].checked = false;
+        }
       })
     })
     .catch((error) => {
