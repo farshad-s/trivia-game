@@ -10,10 +10,27 @@
       <h1 class="title">Trivia Game</h1>
       <h2 class="heading">Do you have what it takes to beat this quiz?</h2>
     </header>
-    <main>
+    <main class="main-section">
       <div class="api-root">
+        <h3 class="question">This is where the question will appear</h3>
+        <input type="radio" id="answer-1" name="answer">
+        <label for="answer-1">This is the first answer to the question</label>
+          <br>
+        <input type="radio" id="answer-2" name="answer">
+        <label for="answer-2">This is the second answer to the question</label>
+          <br>
+        <input type="radio" id="answer-3" name="answer">
+        <label for="answer-3">Third answer to the question</label>
+          <br>
+        <input type="radio" id="answer-4" name="answer">
+        <label for="answer-4">This is the fourth choice available to the question</label>
+          <br>
       </div>
-      <button class="button">Next Question</button>
+
+      <div class="button-holder">
+        <button class="button">Submit</button>
+        <button class="button">Next Question</button>
+      </div>
     </main>
   </body>
 </html>
