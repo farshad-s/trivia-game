@@ -3,6 +3,12 @@ let endpoint =
 
 let question = document.getElementById("question")
 let nextQuestion = document.getElementById("next-question")
+let answerOne = document.getElementById("answer-1")
+let answerTwo = document.getElementById("answer-2")
+let answerThree = document.getElementById("answer-3")
+let answerFour = document.getElementById("answer-4")
+
+console.log(answerOne)
 
 export const accessApi = () => {
   fetch(endpoint)
@@ -10,7 +16,7 @@ export const accessApi = () => {
     .then((data) => {
       let num = 0;
       nextQuestion.addEventListener("click", function() {
-        question.innerText = data.results[num].question  
+        question.innerText = data.results[num].question
         num++;
       })
     })
