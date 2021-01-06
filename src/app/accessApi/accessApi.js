@@ -26,12 +26,13 @@ export const accessApi = () => {
         for (let i = 0; i < answers.length; i++) {
           answers[i].addEventListener("click", function(){
             if (answers[i].innerText == data.results[num].correct_answer) {
+            answers[i].style.backgroundColor = "green"
             score.innerText++;
             num++;
           }
           })
         }
-      })
+      }) 
     })
     .catch((error) => {
       console.log("error is", error);
