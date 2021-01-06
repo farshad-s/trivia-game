@@ -1,1 +1,0 @@
-export { submitAnswer } from "./submitButton";
