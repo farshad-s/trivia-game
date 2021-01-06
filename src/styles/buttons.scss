@@ -1,4 +1,4 @@
-.submit, .next {
+.next {
   background-color: transparent;
   padding: 10px 25px;
   border: none;
@@ -8,13 +8,9 @@
   cursor: pointer;
 }
 
-.submit:hover, .next:hover {
+.next:hover {
   background-color: orange;
   transition: ease-in 0.2s;
-}
-
-.submit {
-  display: none;
 }
 
 .button-holder {
