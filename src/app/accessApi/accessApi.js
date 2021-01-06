@@ -7,7 +7,8 @@ export const accessApi = () => {
   fetch(endpoint)
     .then((response) => response.json())
     .then((data) => {
-      question.innerText = data.results[0].question
+      let num = 0;
+      question.innerText = data.results[num].question
     })
     .catch((error) => {
       console.log("error is", error);
