@@ -23,8 +23,9 @@
   max-width: 250px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: transparent;
-  border: none;
+  background-color: white;
+  border-radius: .25em;
+  border: 1px solid black;
 }
 
 .answer:hover {
