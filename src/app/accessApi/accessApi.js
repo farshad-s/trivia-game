@@ -20,7 +20,12 @@ export const accessApi = () => {
         answerOne.innerText = data.results[num].incorrect_answers[0]
         answerTwo.innerText = data.results[num].incorrect_answers[1]
         answerThree.innerText = data.results[num].correct_answer
-        answerFour.innerText = data.results[num].incorrect_answers[2]   
+        answerFour.innerText = data.results[num].incorrect_answers[2]
+        
+        answers[0].disabled = false;
+        answers[1].disabled = false;
+        answers[2].disabled = false;
+        answers[3].disabled = false;
       }) 
       for (let i = 0; i < answers.length; i++) {
         answers[i].addEventListener("click", function(){
@@ -29,11 +34,14 @@ export const accessApi = () => {
           num++;
         } else {
           num++;
-        }
+        } answers[0].disabled = true;
+          answers[1].disabled = true;
+          answers[2].disabled = true;
+          answers[3].disabled = true;
         })
       }
-    })
+      })
     .catch((error) => {
-      console.log("error is", error);
-    });
+    console.log("error is", error);
+  });
 };
