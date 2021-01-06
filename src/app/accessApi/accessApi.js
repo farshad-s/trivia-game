@@ -32,8 +32,10 @@ export const accessApi = () => {
           if (answers[i].innerText === data.results[num].correct_answer) {
           score.innerText++;
           num++;
+          answers[i].style.backgroundColor = "green";
         } else {
           num++;
+          answers[i].style.backgroundColor = "red";
         } answers[0].disabled = true;
           answers[1].disabled = true;
           answers[2].disabled = true;
