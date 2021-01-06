@@ -8,6 +8,7 @@ let answerTwo = document.getElementById("answer-2")
 let answerThree = document.getElementById("answer-3")
 let answerFour = document.getElementById("answer-4")
 let answers = document.getElementsByName("answer")
+let score = document.getElementById("score")
 
 export const accessApi = () => {
   fetch(endpoint)
@@ -15,15 +16,20 @@ export const accessApi = () => {
     .then((data) => {
       let num = 0;
       nextQuestion.addEventListener("click", function() {
-        console.log(answerOne)
+        console.log(data.results[num].question)
+        // console.log(question.innerText)
         question.innerText = data.results[num].question
         answerOne.innerText = data.results[num].incorrect_answers[0]
         answerTwo.innerText = data.results[num].incorrect_answers[1]
         answerThree.innerText = data.results[num].correct_answer
         answerFour.innerText = data.results[num].incorrect_answers[2]
-        num++;
         for (let i = 0; i < answers.length; i++) {
-          console.log(answers[i].innerText)
+          answers[i].addEventListener("click", function(){
+            if (answers[i].innerText == data.results[num].correct_answer) {
+            score.innerText++;
+            num++;
+          }
+          })
         }
       })
     })
