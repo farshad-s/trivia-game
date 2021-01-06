@@ -8,8 +8,6 @@ let answerTwo = document.getElementById("answer-2")
 let answerThree = document.getElementById("answer-3")
 let answerFour = document.getElementById("answer-4")
 
-console.log(answerOne)
-
 export const accessApi = () => {
   fetch(endpoint)
     .then((response) => response.json())
