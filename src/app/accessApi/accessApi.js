@@ -19,12 +19,27 @@ export const accessApi = () => {
       let num = 0;
       nextQuestion.addEventListener("click", function() {
         question.innerText = data.results[num].question
-        answerOne.innerText = data.results[num].incorrect_answers[0]
-        answerTwo.innerText = data.results[num].incorrect_answers[1]
-        answerThree.innerText = data.results[num].correct_answer
-        answerFour.innerText = data.results[num].incorrect_answers[2]
+        let firstAnswer = data.results[num].incorrect_answers[0]
+        let secondAnswer = data.results[num].incorrect_answers[1]
+        let thirdAnswer = data.results[num].incorrect_answers[2]
+        let fourthAnswer = data.results[num].correct_answer
+        let array = [firstAnswer, secondAnswer, thirdAnswer, fourthAnswer]
         disableAnswers();
-      }) 
+        num++;
+
+        let counter = array.length;
+        while (counter > 0) {
+          let index = Math.floor(Math.random() * counter);
+          counter--;
+          let temp = array[counter];
+          array[counter] = array[index];
+          array[index] = temp;
+          answerOne.innerText = array[0]
+          answerTwo.innerText = array[1]
+          answerThree.innerText = array[2]
+          answerFour.innerText = array[3]
+        }
+      })
       for (let i = 0; i < answers.length; i++) {
         answers[i].addEventListener("click", function(){
           if (answers[i].innerText === data.results[num].correct_answer) {
