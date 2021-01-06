@@ -21,3 +21,14 @@
   display: flex;
   justify-content: center;
 }
+
+.answer {
+  min-width: 200px;
+  max-width: 250px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.answer:hover {
+  cursor: pointer;
+}
