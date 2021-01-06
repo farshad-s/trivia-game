@@ -17,6 +17,10 @@ export const accessApi = () => {
       let num = 0;
       nextQuestion.addEventListener("click", function() {
         question.innerText = data.results[num].question
+        answerOne.innerText = data.results[num].incorrect_answers[0]
+        answerTwo.innerText = data.results[num].incorrect_answers[1]
+        answerThree.innerText = data.results[num].correct_answer
+        answerFour.innerText = data.results[num].incorrect_answers[2]
         num++;
       })
     })
