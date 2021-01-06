@@ -1,12 +1,10 @@
-let apiRoot = document.getElementById("api-root")
+let questionHolder = document.getElementById("question-holder")
 let nextQuestion = document.getElementById("next-question")
-let submitButton = document.getElementById("submit-button");
 let buttonHolder = document.getElementById("button-holder")
 
 export const displayAfterStart = () => {
   nextQuestion.addEventListener("click", function() {
-    apiRoot.style.display = "inline";
-    submitButton.style.display = "inline";
+    questionHolder.style.display = "flex";
     buttonHolder.style.display = "inline";
     nextQuestion.innerText = "Next Question";
   })
